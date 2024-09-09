@@ -2,7 +2,7 @@
 ## Front matter
 title: "Отчёт по лабораторной работе №4"
 subtitle: "Дисциплина: Операционные системы"
-author: ":thyfrjd Lfybkf Bdfyjdbx"
+author: "Жернаков Данила Иванович"
 
 ## Generic otions
 lang: ru-RU
