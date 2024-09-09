@@ -111,7 +111,7 @@ header-includes:
 
 Задаём имя начальной ветки (будем называть её master). Для этого мы вводим команду *git config --global init.defaultBranch master* (рис. [-@fig:005])
 
-![Имя начальной ветки](image/_5.png){#fig:005 width=70%}
+![Имя начальной ветки](image/5.png){#fig:005 width=70%}
 
 Вводим параметры *autocrlf* и *safecrlf* рис. [-@fig:006])
 
