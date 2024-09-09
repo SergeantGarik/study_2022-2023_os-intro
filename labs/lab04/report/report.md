@@ -1,8 +1,8 @@
 ---
 ## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+title: "Отчёт по лабораторной работе №4"
+subtitle: "Дисциплина: Операционные системы"
+author: ":thyfrjd Lfybkf Bdfyjdbx"
 
 ## Generic otions
 lang: ru-RU
@@ -33,16 +33,14 @@ polyglossia-otherlangs:
 babel-lang: russian
 babel-otherlangs: english
 ## Fonts
-mainfont: IBM Plex Serif
-romanfont: IBM Plex Serif
-sansfont: IBM Plex Sans
-monofont: IBM Plex Mono
-mathfont: STIX Two Math
-mainfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-sansfontoptions: Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
-monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
-mathfontoptions:
+mainfont: PT Serif
+romanfont: PT Serif
+sansfont: PT Sans
+monofont: PT Mono
+mainfontoptions: Ligatures=TeX
+romanfontoptions: Ligatures=TeX
+sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
+monofontoptions: Scale=MatchLowercase,Scale=0.9
 ## Biblatex
 biblatex: true
 biblio-style: "gost-numeric"
@@ -70,52 +68,104 @@ header-includes:
 
 # Цель работы
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
-
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
+Получить навыки правильной работы с репозиториями git.
 
 # Задание
 
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
-
-# Теоретическое введение
-
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
-
-Например, в табл. [-@tbl:std-dir] приведено краткое описание стандартных каталогов Unix.
-
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
-
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
-
-Более подробно про Unix см. в [@tanenbaum_book_modern-os_ru; @robbins_book_bash_en; @zarrelli_book_mastering-bash_en; @newham_book_learning-bash_en].
+1. Установить программное обеспечение.
+2. Выполнить работу для тестового репозитория.
+3. Преобразовать рабочий репозиторий в репозиторий с git-flow и conventional commits.
 
 # Выполнение лабораторной работы
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001]).
+## Установка git-flow
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){#fig:001 width=70%}
+Переключаемся на супер-пользователя и устанавливаем git-flow введя 2 команды:
+- *dnf copr enable elegos/gitflow*
+- *dnf install gitflow* (рис. [-@fig:001]), (рис. [-@fig:002])
+
+![Установка git-flow (1)](image/1.png){#fig:001 width=70%}
+
+![Установка git-flow (2)](image/2.png){#fig:002 width=70%}
+
+## Установка Node.js
+
+Далее устанавливаем Node.js введя 2 команды:
+- *dnf install nodejs*
+- *dnf install pnpm* (рис. [-@fig:003]), (рис. [-@fig:004])
+
+![Установка Node.js (1)](image/3.png){#fig:003 width=70%}
+
+![Установка Node.js (2)](image/4.png){#fig:004 width=70%}
+
+## Настройка Node.js
+
+Запускаем pnpm с помощью *pnpm setup*, далее выполняем команду *source ~/.bashrc* (рис. [-@fig:005]), (рис. [-@fig:006])
+
+![Настройка Node.js (1)](image/5.png){#fig:005 width=70%}
+
+![Настройка Node.js (2)](image/6.png){#fig:006 width=70%}
+
+## Общепринятые коммиты
+
+Устанавливаем пакет commitizen с помощью команды *pnpm add -g commitizen*. Данная программа используется для помощи в форматировании коммитов (рис. [-@fig:007])
+
+![Сommitizen](image/7.png){#fig:007 width=70%}
+
+Устанавливаем пакет standard-changelog с помощью команды *pnpm add -g standard-changelog*. Данная программа используется для помощи в создании логов (рис. [-@fig:008])
+
+![Standard-changelog](image/8.png){#fig:008 width=70%}
+
+Создаём репозиторий на GitHub. Называем его git-extended (рис. [-@fig:009])
+
+![Создание репозитория на github](image/9.png){#fig:009 width=70%}
+
+Далее клонируем созданный репозиторий, с помощью *git clone --recursive* (рис. [-@fig:010])
+
+![Клонирование репозитория](image/10.png){#fig:010 width=70%}
+
+Создаём пустой файл, чтобы активировать репозиторий, делаем первый коммит и выкладываем на github, введя нижеперечисленные команды:
+- git commit -m "first commit"
+- git remote add origin https://github.com/<username>/git-extended.git
+- git push -u origin master (рис. [-@fig:011]), (рис. [-@fig:012]), (рис. [-@fig:013])
+
+![Сохранение изменений + первый коммит](image/11.png){#fig:011 width=70%}
+
+![Отправка файлов на github](image/12.png){#fig:012 width=70%}
+
+![Обновлённый репозиторий (1)](image/13.png){#fig:013 width=70%}
+
+Выполняем конфигурацию для пакетов Node.js, с помощью команды *pnpm init* (рис. [-@fig:014])
+
+![Конфигурация для пакетов Node.js](image/14.png){#fig:014 width=70%}
+
+Далее заполняем несколько параметров пакета:
+- название пакета
+- лицензия пакета (предлагается выбирать лицензию CC-BY-4.0)
+- формат коммитов. Для этого добавляем в файл package.json команду для формирования коммитов: *"config":*  (рис. [-@fig:015])
+
+![Отредактированный файл package.json](image/15.png){#fig:015 width=70%}
+
+Далее я выполнила команду *sudo npm install commitizen -g*, так как у меня не работала команда *git cz*, которая нужна в дальнейшем (рис. [-@fig:016])
+
+![Установка commitizen](image/16.png){#fig:016 width=70%}
+
+После добавляем новые файлы, выполняем коммит и отправляем на github, с помощью *git add .*, *git cz* и *git push* (рис. [-@fig:017]), (рис. [-@fig:018])
+
+![Добавление файлов + коммит](image/17.png){#fig:017 width=70%}
+
+![Отправка на github](image/18.png){#fig:018 width=70%}
+
+Далее инициализируем git-flow введя *git flow init*. Префикс для ярлыков устанавливаем в *v* (рис. [-@fig:019])
+
+![Инициализация git-flow](image/19.png){#fig:019 width=70%}
+
 
 # Выводы
 
-Здесь кратко описываются итоги проделанной работы.
+В ходе выполнения лабораторной рбаоты мы получили навыки правильной работы с репозиториями git, а также научились создавать релизы.
 
-# Список литературы{.unnumbered}
+# Список литературы
 
-::: {#refs}
-:::
+1. Лаборатораня работа №4 [Электронный ресурс] URL: https://esystem.rudn.ru/mod/page/view.php?id=1098937#org5411099
+2. Список лицензий [Электронный ресурс] URL: https://spdx.org/licenses/
